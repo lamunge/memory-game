@@ -1,0 +1,57 @@
+button {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#game-board {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.card {
+    perspective: 1000px; /*sets how far the 3d object is from user (closer objects will have stronger 3d effect)*/
+    padding: 0.5em;
+}
+
+.card.flipped .flipper {
+    transform: rotateY(180deg);    
+}
+
+.card, .front, .back {    
+    width: 20vw;
+    height: 28vw;
+    flex: 0 0 auto;
+}
+
+.flipper {
+    transition: 0.6s; /*flip speed*/
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+.front, .back {
+    /*backfaces of front and back elements are hidden (these faces would be the mirror image of the front and back faces)*/
+    backface-visibility: hidden;
+
+    /*absolute position allows front and back faces to overlay on top of each other*/
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.front {
+    z-index: 2; /*place front on top of back*/
+
+    transform: rotateY(0deg); /*for firefox 31*/
+}
+
+.back {
+
+    /*the backface is initially rotated 180 deg, so it is face down*/
+    transform: rotateY(180deg);
+}
