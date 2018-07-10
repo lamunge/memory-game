@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="scripts/script.js"></script>
     </head>
     <body>
         <button onclick="shuffle()">Shuffle Board</button>
+        <p id="matches"></p>
         <div id="game-board">
             <!--Flippable card idea taken from David Walsh's blog: https://davidwalsh.name/css-flip-->
             <div class="card" onclick="flip(this)">
@@ -18,7 +18,9 @@
                     </div>
                     <div class="back">
                         <!-- back content -->
-                        <p>1</p>
+                        <div class="farmer">
+                            <img src="images/farmer.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,7 +33,9 @@
                     </div>
                     <div class="back">
                         <!-- back content -->
-                        <p>2</p>
+                        <div class="harvest-goddess">
+                            <img src="images/harvest_goddess.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -44,7 +48,9 @@
                     </div>
                     <div class="back">
                         <!-- back content -->
-                        <p>3</p>
+                        <div class="grey">
+                            <img src="images/grey.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,7 +63,9 @@
                     </div>
                     <div class="back">
                         <!-- back content -->
-                        <p>4</p>
+                        <div class="mary">
+                            <img src="images/mary.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,7 +78,9 @@
                     </div>
                     <div class="back">
                         <!-- back content -->
-                        <p>5</p>
+                        <div class="eli">
+                            <img src="images/eli.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -83,7 +93,9 @@
                     </div>
                     <div class="back">
                         <!-- back content -->
-                        <p>6</p>
+                        <div class="kai">
+                            <img src="images/kai.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,7 +108,9 @@
                     </div>
                     <div class="back">
                         <!-- back content -->
-                        <p>7</p>
+                        <div class="popuri">
+                            <img src="images/popuri.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -109,7 +123,9 @@
                     </div>
                     <div class="back">
                         <!-- back content -->
-                        <p>8</p>
+                        <div class="rick">
+                            <img src="images/rick.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,7 +138,9 @@
                     </div>
                     <div class="back">
                         <!-- back content -->
-                        <p>9</p>
+                        <div class="karen">
+                            <img src="images/karen.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -135,10 +153,223 @@
                     </div>
                     <div class="back">
                         <!-- back content -->
-                        <p>10</p>
+                        <div class="cliff">
+                            <img src="images/cliff.png">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>        
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="ann">
+                            <img src="images/ann.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="doctor">
+                            <img src="images/doctor.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="farmer">
+                            <img src="images/farmer.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="harvest-goddess">
+                            <img src="images/harvest_goddess.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="grey">
+                            <img src="images/grey.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="mary">
+                            <img src="images/mary.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="eli">
+                            <img src="images/eli.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="kai">
+                            <img src="images/kai.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="popuri">
+                            <img src="images/popuri.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="rick">
+                            <img src="images/rick.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="karen">
+                            <img src="images/karen.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="cliff">
+                            <img src="images/cliff.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="ann">
+                            <img src="images/ann.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" onclick="flip(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <!-- front content -->
+                        <p>Front</p>
+                    </div>
+                    <div class="back">
+                        <!-- back content -->
+                        <div class="doctor">
+                            <img src="images/doctor.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts/script.js"></script>        
     </body>
 </html>

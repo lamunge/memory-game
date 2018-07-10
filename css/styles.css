@@ -7,6 +7,7 @@ button {
 #game-board {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .card {
@@ -14,11 +15,16 @@ button {
     padding: 0.5em;
 }
 
-.card.flipped .flipper {
+.card.flipped .flipper, .card.matched .flipper {
     transform: rotateY(180deg);    
 }
 
-.card, .front, .back {    
+.card.matched .back {
+    border: 1px solid gold;
+    border-radius: 10px;
+}
+
+.card, .front, .back, img {    
     width: 20vw;
     height: 28vw;
     flex: 0 0 auto;
@@ -41,6 +47,9 @@ button {
     left: 0;
 
     border: 1px solid black;
+}
+
+.front, .back, img {    
     border-radius: 10px;
 }
 
@@ -51,7 +60,6 @@ button {
 }
 
 .back {
-
     /*the backface is initially rotated 180 deg, so it is face down*/
     transform: rotateY(180deg);
 }
