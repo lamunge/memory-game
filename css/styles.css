@@ -1,7 +1,10 @@
-button {
-    width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
+.restart-button {
+    width: 173px;
+    height: 52px;
+    background-image: url("../images/push_the_start.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
 }
 
 #game-board {
@@ -24,10 +27,29 @@ button {
     border-radius: 10px;
 }
 
+.card, .front, .back, .card {    
+    flex: 0 0 auto;
+}
+
+@media all and (max-width: 480px) {
 .card, .front, .back, img {    
     width: 20vw;
     height: 28vw;
-    flex: 0 0 auto;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .card, .front, .back, img {    
+        width: 15vw;
+        height: 21vw;
+    }
+}
+
+@media all and (min-width: 901px) {
+    .card, .front, .back, img {    
+        width: 10vw;
+        height: 14vw;
+    }
 }
 
 .flipper {
@@ -57,9 +79,42 @@ button {
     z-index: 2; /*place front on top of back*/
 
     transform: rotateY(0deg); /*for firefox 31*/
+
+    background-image: url("../images/card_front.png");
+    background-size: cover;
 }
 
 .back {
     /*the backface is initially rotated 180 deg, so it is face down*/
     transform: rotateY(180deg);
+    /*absolute position allows front and back faces to overlay on top of each other*/
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    border: 1px solid black;
+}
+
+.front, .back, img {    
+    border-radius: 10px;
+}
+
+.front {
+    z-index: 2; /*place front on top of back*/
+
+    transform: rotateY(0deg); /*for firefox 31*/
+
+    background-image: url("../images/card_front.png");
+    background-size: cover;
+}
+
+.back {
+    /*the backface is initially rotated 180 deg, so it is face down*/
+    transform: rotateY(180deg);
+}
+
+body {
+    background: url("../images/background.png") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
 }
