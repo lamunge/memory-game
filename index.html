@@ -6,7 +6,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div class="restart-button" onclick="restart()"></div>
+        <header>
+            <button onclick="restart()">
+                <img class="push-the-start" src="images/push_the_start.png">
+            </button>
+            <div class="score-banner">
+                <img class="wood-banner" src="images/wood_banner.png">
+                <div id="grey-cow-container" class="cow-container">
+                    <img class="grey-cow" src="images/grey_cow.png">
+                    <img class="grey-cow" src="images/grey_cow.png">
+                    <img class="grey-cow" src="images/grey_cow.png">
+                    <img class="grey-cow" src="images/grey_cow.png">
+                    <img class="grey-cow" src="images/grey_cow.png">                
+                </div>         
+                <div id="color-cow-container" class="cow-container">
+                    <img class="cow" src="images/cow.png">
+                    <img class="cow" src="images/cow.png">
+                    <img class="cow" src="images/cow.png">
+                    <img class="cow" src="images/cow.png">
+                    <img class="cow" src="images/cow.png">
+                </div>       
+            </div>
+        </header>
+        <p class="numbers-pannel">
+            <span id="timer" class="timer">Time: 0</span>
+            <span id="move-counter" class="move-counter">Moves: 0</span>
+        </p>    
         <div id="game-board">
             <!--Flippable card idea taken from David Walsh's blog: https://davidwalsh.name/css-flip-->
             <div class="card" onclick="flip(this)">
@@ -16,7 +41,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="farmer">
-                            <img src="images/farmer.png">
+                            <img class="character-picture" src="images/farmer.png">
                         </div>
                     </div>
                 </div>
@@ -29,7 +54,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="harvest-goddess">
-                            <img src="images/harvest_goddess.png">
+                            <img class="character-picture" src="images/harvest_goddess.png">
                         </div>
                     </div>
                 </div>
@@ -42,7 +67,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="grey">
-                            <img src="images/grey.png">
+                            <img class="character-picture" src="images/grey.png">
                         </div>
                     </div>
                 </div>
@@ -55,7 +80,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="mary">
-                            <img src="images/mary.png">
+                            <img class="character-picture" src="images/mary.png">
                         </div>
                     </div>
                 </div>
@@ -68,7 +93,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="eli">
-                            <img src="images/eli.png">
+                            <img class="character-picture" src="images/eli.png">
                         </div>
                     </div>
                 </div>
@@ -81,7 +106,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="kai">
-                            <img src="images/kai.png">
+                            <img class="character-picture" src="images/kai.png">
                         </div>
                     </div>
                 </div>
@@ -94,7 +119,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="popuri">
-                            <img src="images/popuri.png">
+                            <img class="character-picture" src="images/popuri.png">
                         </div>
                     </div>
                 </div>
@@ -107,7 +132,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="rick">
-                            <img src="images/rick.png">
+                            <img class="character-picture" src="images/rick.png">
                         </div>
                     </div>
                 </div>
@@ -120,7 +145,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="karen">
-                            <img src="images/karen.png">
+                            <img class="character-picture" src="images/karen.png">
                         </div>
                     </div>
                 </div>
@@ -133,7 +158,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="cliff">
-                            <img src="images/cliff.png">
+                            <img class="character-picture" src="images/cliff.png">
                         </div>
                     </div>
                 </div>
@@ -146,7 +171,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="ann">
-                            <img src="images/ann.png">
+                            <img class="character-picture" src="images/ann.png">
                         </div>
                     </div>
                 </div>
@@ -159,7 +184,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="doctor">
-                            <img src="images/doctor.png">
+                            <img class="character-picture" src="images/doctor.png">
                         </div>
                     </div>
                 </div>
@@ -172,7 +197,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="farmer">
-                            <img src="images/farmer.png">
+                            <img class="character-picture" src="images/farmer.png">
                         </div>
                     </div>
                 </div>
@@ -185,7 +210,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="harvest-goddess">
-                            <img src="images/harvest_goddess.png">
+                            <img class="character-picture" src="images/harvest_goddess.png">
                         </div>
                     </div>
                 </div>
@@ -198,7 +223,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="grey">
-                            <img src="images/grey.png">
+                            <img class="character-picture" src="images/grey.png">
                         </div>
                     </div>
                 </div>
@@ -211,7 +236,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="mary">
-                            <img src="images/mary.png">
+                            <img class="character-picture" src="images/mary.png">
                         </div>
                     </div>
                 </div>
@@ -224,7 +249,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="eli">
-                            <img src="images/eli.png">
+                            <img class="character-picture" src="images/eli.png">
                         </div>
                     </div>
                 </div>
@@ -237,7 +262,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="kai">
-                            <img src="images/kai.png">
+                            <img class="character-picture" src="images/kai.png">
                         </div>
                     </div>
                 </div>
@@ -250,7 +275,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="popuri">
-                            <img src="images/popuri.png">
+                            <img class="character-picture" src="images/popuri.png">
                         </div>
                     </div>
                 </div>
@@ -263,7 +288,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="rick">
-                            <img src="images/rick.png">
+                            <img class="character-picture" src="images/rick.png">
                         </div>
                     </div>
                 </div>
@@ -276,7 +301,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="karen">
-                            <img src="images/karen.png">
+                            <img class="character-picture" src="images/karen.png">
                         </div>
                     </div>
                 </div>
@@ -289,7 +314,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="cliff">
-                            <img src="images/cliff.png">
+                            <img class="character-picture" src="images/cliff.png">
                         </div>
                     </div>
                 </div>
@@ -302,7 +327,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="ann">
-                            <img src="images/ann.png">
+                            <img class="character-picture" src="images/ann.png">
                         </div>
                     </div>
                 </div>
@@ -315,7 +340,7 @@
                     <div class="back">
                         <!-- back content -->
                         <div class="doctor">
-                            <img src="images/doctor.png">
+                            <img class="character-picture" src="images/doctor.png">
                         </div>
                     </div>
                 </div>

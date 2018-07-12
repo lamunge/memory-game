@@ -1,8 +1,15 @@
 //global variable for the current number of matches
 let numMatches = 0;
 
+//global variables for the number of wrong moves and total moves a player has made
+let numWrongs = 0;
+let numMoves = 0;
+
 //global variables for start and end times of timer
 let startTime, endTime;
+
+//interval for updating the timer
+let interval;
 
 //adds 1 to score and checks if you've gotten all 12 matches
 function updateScore() {
@@ -10,8 +17,10 @@ function updateScore() {
     if (numMatches === 12) {
         //stop timer for this round
         endTime = new Date();
-        timeStars = getTimeAndStars(startTime, endTime);
-        if (confirm("You won! It took you " + timeStars[0] + " seconds. Your rating is " + timeStars[1] + " stars. Play again?")) {
+        timeDiff = Math.round((endTime - startTime)/1000);
+        clearInterval(interval);
+        numCows = wrongs2Cows(numWrongs);
+        if (confirm("You won! It took you " + timeDiff + " seconds. Your rating is " + numCows + " cows. Play again?")) {
             restart();
         }
         else {
@@ -21,33 +30,39 @@ function updateScore() {
     }
 }
 
-function getTimeAndStars (start, end) {
-    const time = Math.round((end - start)/1000);
-    let stars;
-    if (time < 60) {
-        stars = 5;
-    }    
-    if ((time >= 60) && (time < 70)) {
-        stars = 4;
+function updateRating() {
+    numWrongs++;
+    numCows = wrongs2Cows(numWrongs);
+    cows = document.getElementsByClassName("cow");
+    for (var i = 4 - numCows; i >= 0; i--) {
+        cows[i].style.visibility = "hidden";
     }
-    if ((time >= 70) && (time < 80)) {
-        stars = 3;
-    }
-    if ((time >= 80) && (time < 90)) {
-        stars = 2;
-    }
-    if ((time >= 90) && (time < 100)) {
-        stars = 1;
-    }
-    if (time >= 100) {
-        stars = 0;
-    }
-        
-    
-    return [time, stars];
 }
 
-//initially restart the board
+function wrongs2Cows(nwrongs) {
+    ncows = 0;
+    if (nwrongs <= 12) {
+        ncows = 5;
+    }
+    if (nwrongs > 12 && nwrongs <= 16) {
+        ncows = 4;
+    }
+    if (nwrongs > 16 && nwrongs <= 20) {
+        ncows = 3;
+    }
+    if (nwrongs > 20 && nwrongs <= 24) {
+        ncows = 2;
+    }
+    if (nwrongs > 24 && nwrongs <= 28) {
+        ncows = 1;
+    }
+    if (nwrongs > 28 && nwrongs <= 32) {
+        ncows = 0;
+    }
+    return ncows;
+}
+
+//initially shuffle the board
 restart();
 
 //add "flipped" class to clicked card
@@ -57,6 +72,8 @@ function flip(elem) {
 
     //if there are two cards flipped over, check if they're the same card (after showing them to the user for 1sec)
     if (flippedCards.length === 2) {
+        updateMoves();
+
         //temporarily disable click events during the timeout that's about to happen
         cards = document.getElementsByClassName('card');
         for (var i = cards.length - 1; i >= 0; i--) {
@@ -68,7 +85,7 @@ function flip(elem) {
             compareCards(flippedCards);
         }, 1000);
 
-        //reenable click events (hope this is the right place to add this back in...)
+        //reenable click events after timeout
         window.setTimeout(function () {
             for (var i = cards.length - 1; i >= 0; i--) {
                 cards[i].onclick = function () {
@@ -90,18 +107,47 @@ function compareCards(cards) {
         }
     }
     else {
+        updateRating();
         for (var i = cards.length - 1; i >= 0; i--) {
             cards[i].classList.remove('flipped');
         }
     }    
 }
 
+function updateTimer(startTime) {
+    currentTime = new Date();
+    timeDiff = Math.round((currentTime - startTime)/1000);
+    document.getElementById("timer").innerHTML = "Time: " + timeDiff;
+}
+
+function updateMoves() {
+    numMoves++;
+    document.getElementById("move-counter").innerHTML = "Moves: " + numMoves;
+}
+
 //restarts game board by storing each card's outerHTML in javascript array and randomly adding them back to the board
 function restart() {
     numMatches = 0;
+    numWrongs = 0;
+    numMoves = 0;
+
+    //reset the number of visible cows to 5
+    cows = document.getElementsByClassName("cow");
+    for (var i = cows.length - 1; i >= 0; i--) {
+        cows[i].style.visibility = "visible";
+    }
+
+    //reset moves counter to zero
+    document.getElementById("move-counter").innerHTML = "Moves: 0";
 
     //begin the timer for this round
     startTime = new Date();
+    if (interval) {
+        clearInterval(interval);
+    }
+    interval = setInterval(function () {
+        updateTimer(startTime);
+    }, 1000);
 
     //flip back over all flipped cards
     const flippedCards = document.querySelectorAll('.flipped, .matched');

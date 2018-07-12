@@ -1,10 +1,48 @@
-.restart-button {
-    width: 173px;
-    height: 52px;
-    background-image: url("../images/push_the_start.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: auto;
+* {
+    font-family: sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+button {
+    float: left;
+    background-color: transparent;
+    outline: none;  
+    border: none;
+    margin: 2vw;
+}
+
+.push-the-start {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 26vw;
+    height: 8vw;
+}
+
+.score-banner {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: 34vw;
+}
+
+.wood-banner {
+    width: 56vw;
+    height: 12vw;
+}
+
+.cow-container {
+    position: absolute;
+    top: 3vw;
+    left: 13vw;
+    width: 36vw;
+}
+
+.grey-cow, .cow {
+    width: 5vw;
+    position: relative;
+    top: 0px;
 }
 
 #game-board {
@@ -32,21 +70,21 @@
 }
 
 @media all and (max-width: 480px) {
-.card, .front, .back, img {    
+.card, .front, .back, .character-picture {    
     width: 20vw;
     height: 28vw;
     }
 }
 
 @media all and (max-width: 900px) {
-    .card, .front, .back, img {    
+    .card, .front, .back, .character-picture {    
         width: 15vw;
         height: 21vw;
     }
 }
 
 @media all and (min-width: 901px) {
-    .card, .front, .back, img {    
+    .card, .front, .back, .character-picture {    
         width: 10vw;
         height: 14vw;
     }
@@ -71,7 +109,7 @@
     border: 1px solid black;
 }
 
-.front, .back, img {    
+.front, .back, .character-picture {    
     border-radius: 10px;
 }
 
@@ -95,7 +133,7 @@
     border: 1px solid black;
 }
 
-.front, .back, img {    
+.front, .back, .character-picture {    
     border-radius: 10px;
 }
 
