@@ -19,14 +19,27 @@ function updateScore() {
         endTime = new Date();
         timeDiff = Math.round((endTime - startTime)/1000);
         clearInterval(interval);
+
+        //reveal modal to tell user score and ask to play again
         numCows = wrongs2Cows(numWrongs);
-        if (confirm("You won! It took you " + timeDiff + " seconds. Your rating is " + numCows + " cows. Play again?")) {
-            restart();
+        document.getElementById("modal-text").innerHTML = 
+            "You won! It took you " + timeDiff + " seconds. Your rating is " + numCows + " cows. Play again?";
+        document.getElementById("modal").style.display = "block";
+        
+    }
+}
+
+//if the user clicks a modal button or outisde the modal, automatically hides the modal again
+window.onclick = function(event) {
+    modalButton = document.getElementsByClassName("modal-button");
+    modal = document.getElementById("modal");
+    for (var i = modalButton.length -1; i >= 0; i--) {
+        if (event.target == modalButton[i]) {
+            modal.style.display = "none";
         }
-        else {
-            alert("Well then...");
-            alert("Guess we're done here...");
-        }
+    }
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
 }
 

@@ -4,6 +4,53 @@
     text-align: center;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.4);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 50px; /*top padding before modal box*/
+}
+
+.modal-content {
+    padding: 10vw;
+    padding-bottom: 20vw;
+    margin: auto;
+    width: 50%;
+    background-image: url("../images/background.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    /* get a black outline around text */
+    text-shadow:
+        -1px -1px 0 rgba(0, 0, 0, 0.4),  
+        1px -1px 0 rgba(0, 0, 0, 0.4),
+        -1px 1px 0 rgba(0, 0, 0, 0.4),
+        1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.modal-button {
+    margin: auto;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.modal-button:hover,
+.modal-button:focus {
+    text-shadow:
+        -2px -2px 0 rgba(0, 0, 0, 0.4),  
+        2px -2px 0 rgba(0, 0, 0, 0.4),
+        -2px 2px 0 rgba(0, 0, 0, 0.4),
+        2px 2px 0 rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
 button {
     float: left;
     background-color: transparent;
